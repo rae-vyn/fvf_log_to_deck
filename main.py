@@ -22,14 +22,14 @@ def main():
     card_inventory = playerlog["cards"]
 
     for deck in playerlog["decks"]:
-        card_ids = ""
+        card_ids = []
         print(f"Deck #{deck['index'] + 1}: {deck['name']}")
         for card in deck["cards"]:
             for base_card in card_inventory:
                 if base_card["_id"] == card:
-                    card_ids += str(base_card["cardid"]) + "."
+                    card_ids.append(str(base_card["cardid"]))
                     
-        print("https://friendsvsfriends.help/?deck=" + card_ids + "\n")
+        print("https://friendsvsfriends.help/?deck=" + ".".join(card_ids) + "\n")
     
 
 
