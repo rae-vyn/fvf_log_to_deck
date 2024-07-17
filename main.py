@@ -27,7 +27,7 @@ def main():
         for card in deck["cards"]:
             for base_card in card_inventory:
                 if base_card["_id"] == card:
-                    card_ids += str(base_card["cardid"])
+                    card_ids += str(base_card["cardid"]) + "."
                     
         print("https://friendsvsfriends.help/?deck=" + card_ids + "\n")
     
